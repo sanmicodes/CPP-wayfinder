@@ -1,1 +1,1 @@
-# CPP-wayfinder
+# C++ Pathfinding and Graph Optimisation Engine
