@@ -2,7 +2,7 @@
 
 # C++ Grid Pathfinding & Graph Optimisation Engine
 
-A graph-based pathfinding engine implemented in C++17, exploring shortest-path algorithms, minimum spanning trees, graph traversal and algorithmic performance.
+A graph-based pathfinding engine implemented in C++, exploring shortest-path algorithms, minimum spanning trees, graph traversal and algorithmic performance.
 
 The engine models a two-dimensional Cartesian grid as a weighted graph and compares two different approaches to navigating obstacles, that I have learnt about during my curricular studies in Decision mathematics: Dijkstra's Shortest Path Algorithm and Kruskal's Minimum Spanning Tree Algorithm.
 
