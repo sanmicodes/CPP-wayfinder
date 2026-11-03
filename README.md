@@ -28,19 +28,8 @@ Dijkstra's algorithm calculates the minimum-cost path from a starting vertex to 
 
 The implementation uses a min-priority queue to process vertices in increasing order of their tentative distance.
 
-The relaxation operation is:
 
-\[
-d(v)=\min(d(v),d(u)+w(u,v))
-\]
 
-A predecessor array is maintained to reconstruct the final route.
-
-**Time complexity:**
-
-\[
-O((V+E)\log V)
-\]
 
 This implementation terminates early once the destination vertex is settled.
 
@@ -56,59 +45,9 @@ However, an important distinction is that **the path through an MST is not neces
 
 This makes Kruskal useful as a comparison of alternative graph structures rather than a competing shortest-path algorithm.
 
-**Time complexity:**
 
-\[
-O(E\log E)
-\]
 
-This includes edge sorting, with near-constant amortised DSU operations.
 
-## Implementation
-
-| Component | Implementation |
-|---|---|
-| Language | C++17 |
-| Graph representation | Flat vectors |
-| Priority queue | `std::priority_queue` |
-| Edge sorting | `std::stable_sort` |
-| Connectivity | Disjoint Set Union |
-| Graph traversal | Breadth-First Search |
-| Timing | `std::chrono` |
-
-## Installation & Execution
-
-Clone the repository:
-
-```bash
-git clone YOUR_REPOSITORY_URL
-cd YOUR_REPOSITORY_NAME
-```
-
-Compile:
-
-```bash
-g++ -std=c++17 -O2 wayfinder.cpp -o wayfinder
-```
-
-Run:
-
-```bash
-./wayfinder
-```
-
-## Controls
-
-| Input | Function |
-|---|---|
-| 1 | Set goal |
-| 2 | Generate random goal |
-| 3 | Set start |
-| 4 | Generate random obstacles |
-| 5 | Toggle obstacle |
-| 6 | Switch algorithm |
-| 7 | Compare both algorithms |
-| q | Quit |
 
 ## Performance Analysis
 
@@ -128,13 +67,10 @@ These measurements allow investigation into how different graph algorithms behav
 - Implement A* search using admissible heuristics.
 - Introduce configurable grid dimensions.
 - Implement Prim's Minimum Spanning Tree algorithm.
-- Compare adjacency lists against adjacency matrices.
-- Investigate algorithmic scaling across different graph densities.
-- Introduce automated benchmarking across multiple randomised environments.
-- Explore graph optimisation and route-planning heuristics.
+
 
 ## Project Objective
 
-This project explores the relationship between graph theory, algorithm design and computational efficiency through a practical pathfinding application.
+This project explores the relationship between graph theory, algorithm design and computational efficiency through a practical pathfinding engine I made in c++
 
-It provides a foundation for further investigation into combinatorial optimisation, heuristic search and computational complexity.
+
