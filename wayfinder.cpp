@@ -1,8 +1,4 @@
-// wayfinder.cpp  -  grid wayfinding with Dijkstra or Kruskal
-// Build:  g++ -std=c++17 -O2 wayfinder.cpp -o wayfinder
-//
-// Every point (x, y) on the Cartesian grid is stored as ONE index into flat
-// vectors:   index = y * W + x        x = index % W,  y = index / W
+
 
 #include <algorithm>
 #include <chrono>
@@ -34,7 +30,7 @@ struct Result {
 vector<char> wall(W * H, 0);
 int startIdx = idx(1, 1), goalIdx = idx(W - 2, H - 2);
 
-// ---- neighbours: 8 directions, no cutting corners through walls ----------
+// neighbours: 8 directions, no cutting corners through walls 
 vector<pair<int, int>> neighbours(int i) {  // (neighbour index, cost)
     vector<pair<int, int>> out;
     int x = i % W, y = i / W;
@@ -57,7 +53,7 @@ vector<int> rebuild(const vector<int>& prev, int s, int g) {
     return p;
 }
 
-// ---- Dijkstra -------------------------------------------------------------
+//  Dijkstra
 Result dijkstra(int s, int g) {
     auto t0 = chrono::steady_clock::now();
     Result r;
@@ -81,7 +77,7 @@ Result dijkstra(int s, int g) {
     return r;
 }
 
-// ---- Kruskal (builds a minimum spanning tree, then walks it) --------------
+//  Kruskal (builds a minimum spanning tree, then walks path madw
 struct DSU {
     vector<int> p;
     DSU(int n) : p(n) { iota(p.begin(), p.end(), 0); }
@@ -130,7 +126,7 @@ Result kruskal(int s, int g) {
     return r;
 }
 
-// ---- display --------------------------------------------------------------
+// display ting
 void draw(const Result& r) {
     vector<char> out(W * H, '.');
     for (int i = 0; i < W * H; i++) if (wall[i]) out[i] = '#';
